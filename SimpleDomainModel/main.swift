@@ -1,7 +1,7 @@
 //
 //  main.swift
 //  SimpleDomainModel
-//
+// Lauren Antilla
 //  Created by Ted Neward on 4/6/16.
 //  Copyright © 2016 Ted Neward. All rights reserved.
 //
@@ -140,11 +140,11 @@ open class Person {
   fileprivate var _job : Job? = nil
   open var job : Job? {
     get {
-        return nil
+        return _job
     }
     set(value) {
-        if self.age >= 16 && value != nil {
-            self.job = Job(title: value!.title, type: value!.type)
+        if age >= 16 {
+            _job = value
         }
     }
   }
@@ -152,11 +152,11 @@ open class Person {
   fileprivate var _spouse : Person? = nil
   open var spouse : Person? {
     get {
-        return nil
+        return _spouse
     }
     set(value) {
-        if self.age >= 18 {
-            self.spouse = Person(firstName: value!.firstName, lastName: value!.lastName, age: value!.age)
+        if age >= 18 {
+            _spouse = value
         }
     }
   }
@@ -182,12 +182,22 @@ open class Family {
   fileprivate var members : [Person] = []
   
   public init(spouse1: Person, spouse2: Person) {
+     if spouse1.spouse != nil && spouse2.spouse != nil {
+         spouse1.spouse = spouse2
+         spouse2.spouse = spouse1
+     }
   }
   
   open func haveChild(_ child: Person) -> Bool {
+     if spouse1.age > 21|| spouse2.age > 21 {
+ 
+     }
+ 
   }
   
   open func householdIncome() -> Int {
+ for i in members {
+ 
   }
 }
 */
