@@ -15,7 +15,7 @@ class ExtMoneyTests: XCTestCase {
     let amtU = 230.5.USD
     let amtE = 53.0.EUR
     let amtG = 45.9.GBP
-    let amtY = 1234.56.YEN
+    let amtY = 1234.56.CAN
     
     func testConvertibleMoney() {
         XCTAssert(money1.description == "EUR20.0")
@@ -32,9 +32,9 @@ class ExtMoneyTests: XCTestCase {
         // using extension Double for GBP
         XCTAssert(amtG.amount == Int(45.9))
         XCTAssert(amtG.currency == "GBP")
-        // using extension Double for YEN
+        // using extension Double for CAN
         XCTAssert(amtY.amount == Int(1234.56))
-        XCTAssert(amtY.currency == "YEN")
+        XCTAssert(amtY.currency == "CAN")
     }
     
     func testMathematics() {

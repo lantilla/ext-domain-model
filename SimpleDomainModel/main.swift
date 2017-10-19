@@ -40,9 +40,7 @@ public struct Money: CustomStringConvertible, Mathematics {
                 mon.amount = self.amount * 2 / 3
             } else if self.currency == "CAN" {
                 mon.amount = self.amount * 4 / 5
-            } /*else if self.currency == "YEN" {
-             mon.amount = self.amount / 112.57
-             }*/
+            } 
             mon.currency = "USD"
         case "GBP":
             if self.currency == "USD" {
@@ -51,9 +49,7 @@ public struct Money: CustomStringConvertible, Mathematics {
                 mon.amount = self.amount / 3
             } else if self.currency == "CAN" {
                 mon.amount = self.amount * 2 / 5
-            } /*else if self.currency == "YEN" {
-             mon.amount = self.amount / 148.29
-             }*/
+            }
             mon.currency = "GBP"
         case "CAN":
             if self.currency == "GBP" {
@@ -62,9 +58,7 @@ public struct Money: CustomStringConvertible, Mathematics {
                 mon.amount = self.amount * 5 / 6
             } else if self.currency == "USD" {
                 mon.amount = self.amount * 5 / 4
-            } /*else if self.currency == "YEN" {
-             mon.amount = self.amount / 90.18
-             }*/
+            }
             mon.currency = "CAN"
         case "EUR":
             if self.currency == "GBP" {
@@ -73,21 +67,8 @@ public struct Money: CustomStringConvertible, Mathematics {
                 mon.amount = self.amount * 3 / 2
             } else if self.currency == "CAN" {
                 mon.amount = self.amount * 6 / 5
-            } /*else if self.currency == "YEN" {
-             mon.amount = self.amount / 133.22
-             }*/
+            }
             mon.currency = "EUR"
-            /*case "YEN":
-             if self.currency == "GBP" {
-             mon.amount *= 148.29
-             } else if self.currency == "USD" {
-             mon.amount = self.amount * 112.57
-             } else if self.currency == "CAN" {
-             mon.amount = self.amount * 90.18
-             } else if self.currency == "EUR" {
-             mon.amount = self.amount * 133.22
-             }
-             mon.currency = "YEN" */
         default:
             mon.amount = 0
             mon.currency = "nil"
@@ -282,7 +263,8 @@ extension Double {
     var USD: Money { return Money(amount: Int(amt), currency: "USD") }
     var EUR: Money { return Money(amount: Int(amt), currency: "EUR") }
     var GBP: Money { return Money(amount: Int(amt), currency: "GBP") }
-    var YEN: Money { return Money(amount: Int(amt), currency: "YEN") }
+    var CAN: Money { return Money(amount: Int(amt), currency: "CAN") }
+    // YEN in specs, but not what was defined in class so changed to CAN here
 }
 
 
