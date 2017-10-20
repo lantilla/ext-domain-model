@@ -12,6 +12,7 @@ import SimpleDomainModel
 class ExtMoneyTests: XCTestCase {
     let money1 = Money(amount: 20, currency: "EUR")
     let money2 = Money(amount: 560, currency: "USD")
+    let money3 = Money(amount: 45, currency: "CAN")
     let amtU = 230.5.USD
     let amtE = 53.0.EUR
     let amtG = 45.9.GBP
@@ -20,6 +21,7 @@ class ExtMoneyTests: XCTestCase {
     func testConvertibleMoney() {
         XCTAssert(money1.description == "EUR20.0")
         XCTAssert(money2.description == "USD560.0")
+        XCTAssert(money3.description == "CAN45.0")
     }
 
     func testExtension() {
@@ -32,7 +34,7 @@ class ExtMoneyTests: XCTestCase {
         // using extension Double for GBP
         XCTAssert(amtG.amount == Int(45.9))
         XCTAssert(amtG.currency == "GBP")
-        // using extension Double for CAN
+        // using extension Double for CAN (told to switch it from YEN in specs)
         XCTAssert(amtY.amount == Int(1234.56))
         XCTAssert(amtY.currency == "CAN")
     }
