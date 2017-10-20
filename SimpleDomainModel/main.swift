@@ -144,7 +144,7 @@ open class Job: CustomStringConvertible {
 ////////////////////////////////////
 // Person
 //
-open class Person {
+open class Person: CustomStringConvertible {
     open var firstName : String = ""
     open var lastName : String = ""
     open var age : Int = 0

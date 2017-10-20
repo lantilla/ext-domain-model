@@ -58,6 +58,6 @@ class ExtMoneyTests: XCTestCase {
         XCTAssert(subtract2.amount == 204)
         XCTAssert(subtract2.currency == "GBP")
     }
-    
+
 }
 
